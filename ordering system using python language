@@ -1,0 +1,140 @@
+def display_menu():
+    bundle_prices = {
+        "Bundle 1": 199,
+        "Bundle 2": 299
+    }
+
+    while True:
+        print("UNLIMITED CHICKEN WINGS")
+        print()
+        print("Please select a bundle first:")
+        for bundle, price in bundle_prices.items():
+            print(f"{bundle} : ₱{price}")
+
+        bundle_choice = input("Choose a bundle (B1, B2, or exit): ")
+
+        if bundle_choice == 'B1':
+            print(f"You selected Bundle 1 : ₱{bundle_prices['Bundle 1']}")
+            wings_flavors = 3
+        elif bundle_choice == 'B2':
+            print(f"You selected Bundle 2 : ₱{bundle_prices['Bundle 2']}")
+            wings_flavors = 5
+        elif bundle_choice == 'exit':
+            print("NO ORDERING HAPPENED")
+            break
+        else:
+            print("Invalid bundle choice. Please select 'B1', 'B2', or 'exit'.")
+            continue
+
+        wings_menus = []
+        print()
+        print("MENU FLAVORS")
+        print()
+        print("C1 : PLAIN WINGS")
+        print("C2 : SPICY BBQ WINGS")
+        print("C3 : SMOKE BBQ WINGS")
+        print("C4 : HONEY GLAZE WINGS")
+        print("C5 : KOREAN STYLE WINGS")
+        print("C6 : GARLIC PARMESAN WINGS")
+        print("C7 : SALTED EGG WINGS")
+        print("C8 : TERIYAKI WINGS")
+        print()
+
+        while len(wings_menus) <wings_flavors:
+            menu = input("SELECT YOUR ORDER FROM THE MENU (TYPE 'CANCEL' TO CANCEL ORDER OR TYPE 'EXIT' TO EXIT): ")
+            if menu == 'EXIT':
+                print("EXITING ORDER..........")
+                break
+
+            if menu == 'C1':
+                wings_menus.append("PLAIN WINGS")
+                print("PLAIN WINGS HAS BEEN ADDED TO YOUR ORDER")
+
+            elif menu == 'C2':
+                wings_menus.append("SPICY BBQ WINGS")
+                print("SPICY BBQ WINGS HAS BEEN ADDED TO YOUR ORDER")
+
+            elif menu == 'C3':
+                wings_menus.append("SMOKE BBQ WINGS")
+                print("SMOKE BBQ WINGS HAS BEEN ADDED TO YOUR ORDER")
+
+            elif menu == 'C4':
+                wings_menus.append("HONEY GLAZE WINGS")
+                print("HONEY GLAZE WINGS HAS BEEN ADDED TO YOUR ORDER")
+
+            elif menu == 'C5':
+                wings_menus.append("KOREAN STYLE WINGS")
+                print("KOREAN STYLE WINGS HAS BEEN ADDED TO YOUR ORDER")
+
+            elif menu == 'C6':
+                wings_menus.append("GARLIC PARMESAN WINGS")
+                print("GARLIC PARMESAN WINGS HAS BEEN ADDED TO YOUR ORDER")
+
+            elif menu == 'C7':
+                wings_menus.append("SALTED EGG WINGS")
+                print("SALTED EGG WINGS HAS BEEN ADDED TO YOUR ORDER")
+
+            elif menu == 'C8':
+                wings_menus.append("TERIYAKI WINGS")
+                print("TERIYAKI WINGS HAS BEEN ADDED TO YOUR ORDER")
+
+            elif menu == 'CANCEL':
+                print("ORDER CANCELED")
+                break
+            else:
+                print("INVALID SELECTION. PLEASE CHOOSE FROM THE MENU.")
+
+            print(f"YOU CAN CONTINUE SELECTING OR TYPE 'EXIT' TO FINISH YOUR ORDER.")
+
+
+        if wings_menus:
+            print()
+            print("YOUR FINAL ORDER")
+            for i, wing in enumerate(wings_menus, 1):
+                print(f"{i}. {wing}")
+
+
+            bundle_choices = []
+            if bundle_choice == 'B1':
+                print(f"Total price for your selected Bundle 1: ₱{bundle_prices['Bundle 1']}")
+            elif bundle_choice == 'B2':
+                print(f"Total price for your selected Bundle 2: ₱{bundle_prices['Bundle 2']}")
+
+
+        payment_method = []
+        while True:
+            print("P1 : COUNTER")
+            print("P2 : PAY MAYA")
+            print("P3 : GCASH")
+            payment_method = input("Select your mode of payment (COUNTER, PAY_MAYA, GCASH or type 'cancel' to cancel): ")
+
+            if payment_method == 'P1':
+                print("Please proceed to the counter area.")
+                break
+            if payment_method == 'P2':
+                print("You selected PAY_MAYA as your payment method.")
+                print("Send your payment to (******).")
+                break
+            if payment_method == 'P3':
+                print("You selected GCash as your payment method.")
+                print("Send your payment to (******).")
+                break
+            elif payment_method == 'CANCEL':
+                print("Payment canceled. Goodbye!")
+                break
+            else:
+                print("Invalid payment method. Please select a valid option.")
+
+
+        order_again = []
+        order_again = input("Would you like to place another order? YES OR NO: ")
+
+        if order_again == 'YES':
+            print("START TO ORDER AGAIN")
+            continue
+        else:
+            print("THANK YOU!!! ENJOY YOUR ORDER!!!")
+            break
+
+
+display_menu()
